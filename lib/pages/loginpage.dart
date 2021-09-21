@@ -19,7 +19,7 @@ class LoginPage extends StatelessWidget {
               fontSize: 60,
             ),
           )),
-          SvgPicture.asset('assets/undraw_Vehicle_sale_a645.svg'),
+          Image.asset('undraw_Vehicle_sale_a645-removebg-preview.png'),
         ],
       ),
     ));
