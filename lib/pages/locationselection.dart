@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:byahe_app/widgets/accountIDnumber.dart';
 
 class LocationSelection extends StatefulWidget {
   // const LocationSelection({ Key? key }) : super(key: key);
@@ -8,6 +9,7 @@ class LocationSelection extends StatefulWidget {
 }
 
 class _LocationSelectionState extends State<LocationSelection> {
+  // ignore: missing_return
   Widget locationStatusLayout(String status) {
     switch (status) {
       case "LOW":
@@ -56,12 +58,13 @@ class _LocationSelectionState extends State<LocationSelection> {
             height: 50,
             child: Row(
               children: <Widget>[
+                AccountNumber(),
                 Expanded(
-                    child: CircleAvatar(
-                  backgroundImage: AssetImage('assets/salac.jpg'),
-                )),
-                Expanded(flex: 4, child: Text('ID : 2018101451')),
-                Expanded(child: Image.asset('assets/icons8-reply-arrow-30.png'))
+                    child: InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/loginpage');
+                        },
+                        child: Image.asset('assets/icons8-reply-arrow-30.png')))
               ],
             ),
           ),

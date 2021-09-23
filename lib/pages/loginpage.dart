@@ -43,7 +43,9 @@ class LoginPage extends StatelessWidget {
                 Padding(
                     padding: EdgeInsets.fromLTRB(15, 0, 15, 15),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/locationselection');
+                      },
                       child: Text("LOGIN"),
                       style: ElevatedButton.styleFrom(
                           primary: Colors.yellow[700],
