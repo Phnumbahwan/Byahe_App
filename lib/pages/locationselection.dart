@@ -8,11 +8,41 @@ class LocationSelection extends StatefulWidget {
 }
 
 class _LocationSelectionState extends State<LocationSelection> {
+  Widget locationStatusLayout(String status) {
+    switch (status) {
+      case "LOW":
+        {
+          return Text(
+            "• LOW",
+            style: TextStyle(color: Colors.yellow[400]),
+          );
+        }
+        break;
+
+      case "MEDIUM":
+        {
+          return Text(
+            "• MEDIUM",
+            style: TextStyle(color: Colors.green[400]),
+          );
+        }
+        break;
+
+      case "HIGH":
+        {
+          return Text(
+            "• HIGH",
+            style: TextStyle(color: Colors.red[400]),
+          );
+        }
+        break;
+    }
+  }
 
   var locationStatus = [
-    {'location': 'Gusa', 'status': '1'},
-    {'location': 'Cugman', 'status': '2'},
-    {'location': 'Lapasan', 'status': '5'}
+    {'location': 'Gusa', 'status': 'HIGH'},
+    {'location': 'Cugman', 'status': 'LOW'},
+    {'location': 'Lapasan', 'status': 'MEDIUM'},
   ];
 
   @override
@@ -47,15 +77,25 @@ class _LocationSelectionState extends State<LocationSelection> {
             ),
           ),
           Container(
+            padding: EdgeInsets.only(top: 10),
             child: Column(
-              children: locationStatus.map((location) => 
-                Row(
-                  children: <Widget>[
-                    
-                  ],
-                )
-              ).toList()
-            ),
+                children: locationStatus
+                    .map((location) => Container(
+                        color: Colors.yellow[700],
+                        padding: EdgeInsets.all(20),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Container(
+                              child: Text(location['location'],
+                                  style: TextStyle(color: Colors.white)),
+                            ),
+                            Container(
+                              child: locationStatusLayout(location['status']),
+                            )
+                          ],
+                        )))
+                    .toList()),
           )
         ],
       ),
