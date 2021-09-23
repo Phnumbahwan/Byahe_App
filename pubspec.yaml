@@ -1,4 +1,4 @@
-name: Byahe_App
+name: byahe_app
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -63,7 +63,7 @@ flutter:
   fonts:
     - family: Thasadith
       fonts:
-        - asset: fonts/Thasadith-Regular.ttf
+        - asset: fonts/Thasadith-Bold.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
