@@ -58,7 +58,7 @@ class _LocationSelectionState extends State<LocationSelection> {
             height: 50,
             child: Row(
               children: <Widget>[
-                AccountNumber(),
+                AccountNumber(), //I separated the widget because it is useable.
                 Expanded(
                     child: InkWell(
                         onTap: () {
