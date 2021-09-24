@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:byahe_app/widgets/accountIDnumber.dart';
+import 'package:byahe_app/widgets/topbarmod.dart';
 
 class LocationSelection extends StatefulWidget {
   // const LocationSelection({ Key? key }) : super(key: key);
@@ -54,20 +54,7 @@ class _LocationSelectionState extends State<LocationSelection> {
             child: Container(
       child: Column(
         children: <Widget>[
-          Container(
-            height: 50,
-            child: Row(
-              children: <Widget>[
-                AccountNumber(), //I separated the widget because it is useable.
-                Expanded(
-                    child: InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(context, '/loginpage');
-                        },
-                        child: Image.asset('assets/icons8-reply-arrow-30.png')))
-              ],
-            ),
-          ),
+          Container(height: 50, child: TopBarMod()),
           Container(
             margin: EdgeInsets.symmetric(horizontal: 10),
             child: Form(
@@ -86,18 +73,23 @@ class _LocationSelectionState extends State<LocationSelection> {
                     .map((location) => Container(
                         color: Colors.yellow[700],
                         padding: EdgeInsets.all(20),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Container(
-                              child: Text(location['location'],
-                                  style: TextStyle(color: Colors.white)),
-                            ),
-                            Container(
-                              child: locationStatusLayout(location['status']),
-                            )
-                          ],
-                        )))
+                        child: InkWell(
+                            onTap: () {
+                              Navigator.pushNamed(context, '/routeselection');
+                            },
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Container(
+                                  child: Text(location['location'],
+                                      style: TextStyle(color: Colors.white)),
+                                ),
+                                Container(
+                                  child:
+                                      locationStatusLayout(location['status']),
+                                )
+                              ],
+                            ))))
                     .toList()),
           )
         ],
