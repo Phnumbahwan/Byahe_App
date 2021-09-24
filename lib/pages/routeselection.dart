@@ -41,11 +41,13 @@ class _RouteSelectionState extends State<RouteSelection> {
                           child: Row(
                             children: <Widget>[
                               Expanded(
+                                  flex: 3,
                                   child: Container(
-                                child: Text("• " + route['route'],
-                                    style: TextStyle(color: Colors.white)),
-                              )),
+                                    child: Text("• " + route['route'],
+                                        style: TextStyle(color: Colors.white)),
+                                  )),
                               Expanded(
+                                  flex: 3,
                                   child: PercentIndicator(route['status'])),
                               Expanded(
                                 child: Image.asset(
