@@ -6,7 +6,8 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
+        body: SingleChildScrollView(
+            child: Container(
       margin: EdgeInsets.fromLTRB(0, 50, 0, 0),
       child: Column(
         children: <Widget>[
@@ -60,6 +61,6 @@ class LoginPage extends StatelessWidget {
           )
         ],
       ),
-    ));
+    )));
   }
 }

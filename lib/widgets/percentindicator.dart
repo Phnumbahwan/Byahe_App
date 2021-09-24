@@ -18,6 +18,7 @@ class PercentIndicator extends StatelessWidget {
     } else {
       return Colors.white;
     }
+    return null;
   }
 
   @override

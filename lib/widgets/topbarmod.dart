@@ -13,7 +13,11 @@ class TopBarMod extends StatelessWidget {
                   radius: 15,
                   backgroundImage: AssetImage('assets/salac.jpg'),
                 )),
-            Container(child: Text('ID : 2018101451'))
+            Container(
+                child: Text(
+              'ID : 2018101451',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ))
           ])),
       Expanded(
           child: InkWell(
