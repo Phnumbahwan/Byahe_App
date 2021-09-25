@@ -6,7 +6,6 @@ class PercentIndicator extends StatelessWidget {
   PercentIndicator(this.status);
 
   Color turnGreen(pos) {
-    print(status);
     if (status >= pos) {
       if (status <= 2) {
         return Colors.green;
