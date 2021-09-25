@@ -50,17 +50,23 @@ class _LocationSelectionState extends State<LocationSelection> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-            child: Container(
+        body: SingleChildScrollView(
+            child: SafeArea(
+                child: Container(
       child: Column(
         children: <Widget>[
-          Container(height: 50, child: TopBarMod()),
+          Container(height: 50, child: TopBarMod()), //MAIN TOP BAR
           Container(
             margin: EdgeInsets.symmetric(horizontal: 10),
             child: Form(
               child: TextFormField(
                 decoration: InputDecoration(
-                    suffixIcon: Icon(Icons.search),
+                    enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.yellow[700])),
+                    suffixIcon: Icon(
+                      Icons.search,
+                      color: Colors.yellow[700],
+                    ),
                     hintText: ('Search here ...'),
                     border: OutlineInputBorder()),
               ),
@@ -94,6 +100,6 @@ class _LocationSelectionState extends State<LocationSelection> {
           )
         ],
       ),
-    )));
+    ))));
   }
 }

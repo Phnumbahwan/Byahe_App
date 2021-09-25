@@ -29,16 +29,28 @@ class LoginPage extends StatelessWidget {
                     padding: EdgeInsets.all(15),
                     child: TextFormField(
                       decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.yellow[700])),
                           hintText: ("Username"),
-                          prefixIcon: Icon(Icons.person),
+                          prefixIcon: Icon(
+                            Icons.person,
+                            color: Colors.yellow[700],
+                          ),
                           border: OutlineInputBorder()),
                     )),
                 Padding(
                     padding: EdgeInsets.fromLTRB(15, 0, 15, 15),
                     child: TextFormField(
                       decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.yellow[700])),
                           hintText: ("Password"),
-                          prefixIcon: Icon(Icons.lock),
+                          prefixIcon: Icon(
+                            Icons.lock,
+                            color: Colors.yellow[700],
+                          ),
                           border: OutlineInputBorder()),
                     )),
                 Padding(

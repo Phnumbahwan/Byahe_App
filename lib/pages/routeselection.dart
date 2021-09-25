@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:byahe_app/widgets/topbarmod.dart';
 import 'package:byahe_app/widgets/percentindicator.dart';
 import 'package:flutter/rendering.dart';
+import 'package:byahe_app/data/data.dart';
 
 class RouteSelection extends StatefulWidget {
   // const RouteSelection({ Key? key }) : super(key: key);
@@ -12,46 +13,10 @@ class RouteSelection extends StatefulWidget {
 }
 
 class _RouteSelectionState extends State<RouteSelection> {
-  var locationRoute = [
-    {
-      'route': 'ROUTE - RD',
-      'status': 2,
-      'active': false,
-      'vehicle_status': 'ALLEY',
-      'time_to_leave': 13,
-      'seats_availability': 2,
-      'vehicle_plate_number': 'KMJS 404',
-      'route_destination':
-          'Cugman-Gusa-Lapasan-Gaisano-Capistrano st-Divisoria-Cogon-Ketkai'
-    },
-    {
-      'route': 'ROUTE - RC',
-      'status': 5,
-      'active': false,
-      'vehicle_status': 'ALLEY',
-      'time_to_leave': 13,
-      'seats_availability': 2,
-      'vehicle_plate_number': 'KMJS 404',
-      'route_destination':
-          'Cugman-Gusa-Lapasan-Gaisano-Capistrano st-Divisoria-Cogon-Ketkai'
-    },
-    {
-      'route': 'ROUTE - BUGO',
-      'status': 3,
-      'active': false,
-      'vehicle_status': 'ALLEY',
-      'time_to_leave': 13,
-      'seats_availability': 2,
-      'vehicle_plate_number': 'KMJS 404',
-      'route_destination':
-          'Cugman-Gusa-Lapasan-Gaisano-Capistrano st-Divisoria-Cogon-Ketkai'
-    },
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
+      body: SingleChildScrollView(child: SafeArea(
         child: Container(
           child: Column(
             children: <Widget>[
@@ -274,7 +239,10 @@ class _RouteSelectionState extends State<RouteSelection> {
                                                           )),
                                                   child: Text("QUEUE NOW!")),
                                               ElevatedButton(
-                                                  onPressed: () {},
+                                                  onPressed: () {
+                                                    Navigator.pushNamed(context,
+                                                        '/reservevehicle');
+                                                  },
                                                   style:
                                                       ElevatedButton.styleFrom(
                                                           onPrimary: Colors
@@ -295,6 +263,6 @@ class _RouteSelectionState extends State<RouteSelection> {
           ),
         ),
       ),
-    );
+    ));
   }
 }
