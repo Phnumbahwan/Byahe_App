@@ -13,6 +13,15 @@ class RouteSelection extends StatefulWidget {
 }
 
 class _RouteSelectionState extends State<RouteSelection> {
+  // ButtonStyle changeStyleQueue(bool queue) {
+  //   if (queue) {
+  //     ElevatedButton.styleFrom(
+  //         primary: Colors.yellow[700], side: BorderSide(color: Colors.white));
+  //   } else {
+
+  //   }
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,6 +77,7 @@ class _RouteSelectionState extends State<RouteSelection> {
                                             child: Text(
                                                 route['queue'] ? "QUEUED" : " ",
                                                 style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
                                                     color: Colors.green)),
                                           )
                                         ],
@@ -234,7 +244,7 @@ class _RouteSelectionState extends State<RouteSelection> {
                                         ),
                                         Container(
                                           padding: EdgeInsets.symmetric(
-                                              horizontal: 50),
+                                              horizontal: 25),
                                           child: Row(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceAround,
@@ -244,18 +254,30 @@ class _RouteSelectionState extends State<RouteSelection> {
                                                     setState(() {
                                                       route['queue'] =
                                                           !route['queue'];
-                                                      route['active'] =
-                                                          !route['active'];
                                                     });
                                                   },
-                                                  style:
-                                                      ElevatedButton.styleFrom(
-                                                          primary: Colors
-                                                              .yellow[700],
-                                                          side: BorderSide(
-                                                            color: Colors.white,
-                                                          )),
-                                                  child: Text("QUEUE NOW!")),
+                                                  style: route['queue']
+                                                      ? ElevatedButton
+                                                          .styleFrom(
+                                                              onPrimary: Colors
+                                                                  .yellow[700],
+                                                              primary:
+                                                                  Colors.white)
+                                                      : ElevatedButton
+                                                          .styleFrom(
+                                                              primary: Colors
+                                                                  .yellow[700],
+                                                              side: BorderSide(
+                                                                  color: Colors
+                                                                      .white)),
+                                                  child: Text(
+                                                    route['queue']
+                                                        ? "UNQUEUE NOW!"
+                                                        : "QUEUE NOW!",
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold),
+                                                  )),
                                               ElevatedButton(
                                                   onPressed: () {
                                                     Navigator.pushNamed(context,
@@ -263,11 +285,15 @@ class _RouteSelectionState extends State<RouteSelection> {
                                                   },
                                                   style:
                                                       ElevatedButton.styleFrom(
-                                                          onPrimary: Colors
+                                                          primary: Colors
                                                               .yellow[700],
-                                                          primary:
-                                                              Colors.white),
-                                                  child: Text("RESERVE NOW!"))
+                                                          side: BorderSide(
+                                                              color: Colors
+                                                                  .white)),
+                                                  child: Text("RESERVE NOW!",
+                                                      style: TextStyle(
+                                                          fontWeight:
+                                                              FontWeight.bold)))
                                             ],
                                           ),
                                         )
