@@ -13,15 +13,6 @@ class RouteSelection extends StatefulWidget {
 }
 
 class _RouteSelectionState extends State<RouteSelection> {
-  // ButtonStyle changeStyleQueue(bool queue) {
-  //   if (queue) {
-  //     ElevatedButton.styleFrom(
-  //         primary: Colors.yellow[700], side: BorderSide(color: Colors.white));
-  //   } else {
-
-  //   }
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
