@@ -11,6 +11,8 @@ class ReserveVehicle extends StatefulWidget {
 }
 
 class _ReserveVehicleState extends State<ReserveVehicle> {
+  TextEditingController dateCtl = TextEditingController();
+  DateTime selectedDate = DateTime.now();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -138,15 +140,42 @@ class _ReserveVehicleState extends State<ReserveVehicle> {
                 Container(
                     padding: EdgeInsets.symmetric(vertical: 10),
                     child: TextFormField(
+                      controller: dateCtl,
                       decoration: InputDecoration(
-                          enabledBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.yellow[700])),
-                          labelText: "Desired Reserve Date",
-                          border: OutlineInputBorder()),
+                        suffixIcon: Icon(Icons.calendar_today_sharp),
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.yellow[700])),
+                        border: OutlineInputBorder(),
+                        labelText: "Desired Reservation Date",
+                      ),
+                      onTap: () async {
+                        DateTime date = DateTime(1900);
+                        FocusScope.of(context).requestFocus(new FocusNode());
+
+                        date = await showDatePicker(
+                            context: context,
+                            initialDate: selectedDate,
+                            firstDate: DateTime(1900),
+                            lastDate: DateTime(2100));
+
+                        if (date != null) {
+                          setState(() {
+                            selectedDate = date;
+                          });
+                        }
+                        dateCtl.text = date.toIso8601String().split('T')[0];
+                      },
                     )),
               ]),
-            ))
+            )),
+        Container(
+          padding: EdgeInsets.symmetric(vertical: 10),
+          child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  primary: Colors.yellow[700], minimumSize: Size(200, 50)),
+              onPressed: () {},
+              child: Text("CONFIRM")),
+        )
       ]),
     ))));
   }

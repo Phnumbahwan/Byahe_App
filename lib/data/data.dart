@@ -8,7 +8,8 @@ var locationRoute = [
     'seats_availability': 2,
     'vehicle_plate_number': 'KMJS 404',
     'route_destination':
-        'Cugman-Gusa-Lapasan-Gaisano-Capistrano st-Divisoria-Cogon-Ketkai'
+        'Cugman-Gusa-Lapasan-Gaisano-Capistrano st-Divisoria-Cogon-Ketkai',
+    'queue': false
   },
   {
     'route': 'ROUTE - RC',
@@ -19,7 +20,8 @@ var locationRoute = [
     'seats_availability': 2,
     'vehicle_plate_number': 'KMJS 404',
     'route_destination':
-        'Cugman-Gusa-Lapasan-Gaisano-Capistrano st-Divisoria-Cogon-Ketkai'
+        'Cugman-Gusa-Lapasan-Gaisano-Capistrano st-Divisoria-Cogon-Ketkai',
+    'queue': false
   },
   {
     'route': 'ROUTE - BUGO',
@@ -30,7 +32,8 @@ var locationRoute = [
     'seats_availability': 2,
     'vehicle_plate_number': 'KMJS 404',
     'route_destination':
-        'Cugman-Gusa-Lapasan-Gaisano-Capistrano st-Divisoria-Cogon-Ketkai'
+        'Cugman-Gusa-Lapasan-Gaisano-Capistrano st-Divisoria-Cogon-Ketkai',
+    'queue': false
   },
   {
     'route': 'ROUTE - RC',
@@ -41,7 +44,8 @@ var locationRoute = [
     'seats_availability': 2,
     'vehicle_plate_number': 'KMJS 404',
     'route_destination':
-        'Cugman-Gusa-Lapasan-Gaisano-Capistrano st-Divisoria-Cogon-Ketkai'
+        'Cugman-Gusa-Lapasan-Gaisano-Capistrano st-Divisoria-Cogon-Ketkai',
+    'queue': false
   },
   {
     'route': 'ROUTE - RC',
@@ -52,7 +56,8 @@ var locationRoute = [
     'seats_availability': 2,
     'vehicle_plate_number': 'KMJS 404',
     'route_destination':
-        'Cugman-Gusa-Lapasan-Gaisano-Capistrano st-Divisoria-Cogon-Ketkai'
+        'Cugman-Gusa-Lapasan-Gaisano-Capistrano st-Divisoria-Cogon-Ketkai',
+    'queue': false
   },
 ];
 

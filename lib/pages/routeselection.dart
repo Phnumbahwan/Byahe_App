@@ -16,7 +16,8 @@ class _RouteSelectionState extends State<RouteSelection> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(child: SafeArea(
+        body: SingleChildScrollView(
+      child: SafeArea(
         child: Container(
           child: Column(
             children: <Widget>[
@@ -47,18 +48,28 @@ class _RouteSelectionState extends State<RouteSelection> {
                                     headerBuilder: (BuildContext context,
                                         bool isExpanded) {
                                       return Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
                                         children: <Widget>[
-                                          Container(
-                                            padding: EdgeInsets.all(10),
-                                            child: Text(
-                                              "• " + route['route'],
-                                              style: TextStyle(
-                                                  color: Colors.white),
+                                          Row(children: <Widget>[
+                                            Container(
+                                              padding: EdgeInsets.all(10),
+                                              child: Text(
+                                                "• " + route['route'],
+                                                style: TextStyle(
+                                                    color: Colors.white),
+                                              ),
                                             ),
-                                          ),
+                                            Container(
+                                                child: PercentIndicator(
+                                                    route['status'])),
+                                          ]),
                                           Container(
-                                              child: PercentIndicator(
-                                                  route['status'])),
+                                            child: Text(
+                                                route['queue'] ? "QUEUED" : " ",
+                                                style: TextStyle(
+                                                    color: Colors.green)),
+                                          )
                                         ],
                                       );
                                     },
@@ -229,7 +240,14 @@ class _RouteSelectionState extends State<RouteSelection> {
                                                 MainAxisAlignment.spaceAround,
                                             children: <Widget>[
                                               ElevatedButton(
-                                                  onPressed: () {},
+                                                  onPressed: () {
+                                                    setState(() {
+                                                      route['queue'] =
+                                                          !route['queue'];
+                                                      route['active'] =
+                                                          !route['active'];
+                                                    });
+                                                  },
                                                   style:
                                                       ElevatedButton.styleFrom(
                                                           primary: Colors
