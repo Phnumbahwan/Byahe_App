@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:byahe_app/widgets/topbarmod.dart';
-import 'package:byahe_app/widgets/percentindicator.dart';
+import 'package:byahe_app/widgets/commuter/topbarmod.dart';
+import 'package:byahe_app/widgets/commuter/percentindicator.dart';
 import 'package:flutter/rendering.dart';
 import 'package:byahe_app/data/data.dart';
 
@@ -13,6 +13,23 @@ class RouteSelection extends StatefulWidget {
 }
 
 class _RouteSelectionState extends State<RouteSelection> {
+  _RouteSelectionState() {
+    print(locationRoute
+      ..sort((route1, route2) {
+        int status1 = route1['status'];
+        int status2 = route2['status'];
+        return status1.compareTo(status2);
+      }));
+  }
+
+  void resetQueued() {
+    setState(() {
+      locationRoute.map((route) {
+        return route['queue'] = false;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,6 +56,7 @@ class _RouteSelectionState extends State<RouteSelection> {
                                   expansionCallback:
                                       (int index, bool isExpanded) {
                                     setState(() {
+                                      resetQueued();
                                       route['active'] = !route['active'];
                                     });
                                   },

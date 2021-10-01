@@ -1,8 +1,8 @@
-import 'package:byahe_app/pages/locationselection.dart';
+import 'package:byahe_app/pages/commuter/locationselection.dart';
 import 'package:flutter/material.dart';
-import 'package:byahe_app/pages/loginpage.dart';
-import 'package:byahe_app/pages/routeselection.dart';
-import 'package:byahe_app/pages/reservevehicle.dart';
+import 'package:byahe_app/pages/commuter/loginpage.dart';
+import 'package:byahe_app/pages/commuter/routeselection.dart';
+import 'package:byahe_app/pages/commuter/reservevehicle.dart';
 
 void main() {
   runApp(MyApp());

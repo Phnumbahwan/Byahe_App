@@ -9,9 +9,9 @@ class PercentIndicator extends StatelessWidget {
     if (status >= pos) {
       if (status <= 2) {
         return Colors.green;
-      } else if (status == 3) {
+      } else if (status == 3 || status == 4) {
         return Colors.yellow;
-      } else if (status >= 4) {
+      } else if (status > 4) {
         return Colors.red;
       }
     } else {
