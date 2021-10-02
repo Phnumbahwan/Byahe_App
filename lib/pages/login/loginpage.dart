@@ -66,8 +66,13 @@ class LoginPage extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(50))),
                     )),
-                Text("Don't have account yet? Register now!",
-                    style: TextStyle(fontSize: 10, color: Colors.blue[200]))
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/register');
+                  },
+                  child: Text("Don't have account yet? Register now!",
+                      style: TextStyle(fontSize: 15, color: Colors.blue[200])),
+                )
               ],
             ),
           )
