@@ -28,7 +28,10 @@ class RegisterCommuter extends StatelessWidget {
             children: <Widget>[
               Container(
                   child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(
+                            context, '/registercommuternickname');
+                      },
                       style: ElevatedButton.styleFrom(
                           primary: Colors.white,
                           fixedSize: Size(300, 50),
@@ -61,7 +64,10 @@ class RegisterCommuter extends StatelessWidget {
               Container(
                   padding: EdgeInsets.all(10),
                   child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(
+                            context, '/registercommuternickname');
+                      },
                       style: ElevatedButton.styleFrom(
                           primary: Colors.white,
                           fixedSize: Size(300, 50),

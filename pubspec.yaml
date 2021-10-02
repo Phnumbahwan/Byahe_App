@@ -64,6 +64,10 @@ flutter:
     - family: Thasadith
       fonts:
         - asset: fonts/Thasadith-Bold.ttf
+
+    - family: DancingScript
+      fonts:
+        - asset: fonts/DancingScript-Regular.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
