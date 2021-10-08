@@ -1,4 +1,6 @@
 import 'package:byahe_app/pages/commuter/locationselection.dart';
+import 'package:byahe_app/pages/register/registerdriver.dart';
+import 'package:byahe_app/pages/register/registerdriverconfirmation.dart';
 import 'package:flutter/material.dart';
 import 'package:byahe_app/pages/login/loginpage.dart';
 import 'package:byahe_app/pages/register/registerpage.dart';
@@ -23,6 +25,8 @@ class MyApp extends StatelessWidget {
         '/register': (context) => RegisterPage(),
         '/registercommuter': (context) => RegisterCommuter(),
         '/registercommuternickname': (context) => RegisterCommuterNickname(),
+        '/registerdriver': (context) => RegisterDriver(),
+        '/registerdriverconfirmation': (context) => RegisterDriverConfirmation(),
         '/locationselection': (context) => LocationSelection(),
         '/routeselection': (context) => RouteSelection(),
         '/reservevehicle': (context) => ReserveVehicle()

@@ -46,7 +46,9 @@ class RegisterPage extends StatelessWidget {
           Container(
             margin: EdgeInsets.symmetric(vertical: 10),
             child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/registerdriver');
+                },
                 style: ElevatedButton.styleFrom(
                     primary: Colors.yellow[700],
                     fixedSize: Size(250, 60),
