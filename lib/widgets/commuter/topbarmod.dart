@@ -17,7 +17,22 @@ class TopBarMod extends StatelessWidget {
                 child: Text(
               'ID : 2018101451',
               style: TextStyle(fontWeight: FontWeight.bold),
-            ))
+            )),
+            Container(
+                child: true
+                    ? RichText(
+                        text: TextSpan(
+                            text: "   Status: ",
+                            style: TextStyle(color: Colors.black, fontSize: 13),
+                            children: const <TextSpan>[
+                              TextSpan(
+                                  text: "Riding",
+                                  style: TextStyle(
+                                      color: Colors.redAccent,
+                                      fontWeight: FontWeight.bold)),
+                            ]),
+                      )
+                    : null)
           ])),
       Expanded(
           child: InkWell(

@@ -28,7 +28,7 @@ var locationRoute = [
     'status': 3,
     'active': false,
     'vehicle_status': 'ALLEY',
-    'time_to_leave': 13,
+    'time_to_leave': 9,
     'seats_availability': 2,
     'vehicle_plate_number': 'KMJS 424',
     'route_destination':

@@ -1,3 +1,4 @@
+import 'package:byahe_app/pages/commuter/routeselection.dart';
 import 'package:flutter/material.dart';
 import 'package:byahe_app/widgets/commuter/topbarmod.dart';
 
@@ -81,7 +82,9 @@ class _LocationSelectionState extends State<LocationSelection> {
                         padding: EdgeInsets.all(20),
                         child: InkWell(
                             onTap: () {
-                              Navigator.pushNamed(context, '/routeselection');
+                              // Navigator.pushNamed(context, '/routeselection');
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => RouteSelection()));
                             },
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,

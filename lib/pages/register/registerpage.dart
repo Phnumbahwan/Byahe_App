@@ -1,3 +1,5 @@
+import 'package:byahe_app/pages/register/registercommuter.dart';
+import 'package:byahe_app/pages/register/registerdriver.dart';
 import 'package:flutter/material.dart';
 import 'package:byahe_app/widgets/closebutton.dart';
 
@@ -29,7 +31,9 @@ class RegisterPage extends StatelessWidget {
             padding: EdgeInsets.all(10),
             child: ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/registercommuter');
+                  // Navigator.pushNamed(context, '/registercommuter');
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => RegisterCommuter()));
                 },
                 style: ElevatedButton.styleFrom(
                     primary: Colors.yellow[700],
@@ -47,7 +51,9 @@ class RegisterPage extends StatelessWidget {
             margin: EdgeInsets.symmetric(vertical: 10),
             child: ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/registerdriver');
+                  // Navigator.pushNamed(context, '/registerdriver');
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => RegisterDriver()));
                 },
                 style: ElevatedButton.styleFrom(
                     primary: Colors.yellow[700],

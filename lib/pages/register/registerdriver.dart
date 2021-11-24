@@ -1,3 +1,4 @@
+import 'package:byahe_app/pages/register/registerdriverconfirmation.dart';
 import 'package:byahe_app/widgets/closebutton.dart';
 import 'package:flutter/material.dart';
 
@@ -76,10 +77,35 @@ class _RegisterDriverState extends State<RegisterDriver> {
                     border: OutlineInputBorder()),
               )),
           Container(
+              padding: EdgeInsets.only(top: 10),
+              child: TextFormField(
+                decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.yellow[700]),
+                        borderRadius: BorderRadius.circular(17)),
+                    labelText: "License Number",
+                    border: OutlineInputBorder()),
+              )),
+          Container(
+              padding: EdgeInsets.only(top: 10),
+              child: TextFormField(
+                decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.yellow[700]),
+                        borderRadius: BorderRadius.circular(17)),
+                    labelText: "Vehicle plate number",
+                    border: OutlineInputBorder()),
+              )),
+          Container(
             padding: EdgeInsets.only(top: 10, bottom: 30),
             child: ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/registerdriverconfirmation');
+                //Navigator.pushNamed(context, '/registerdriverconfirmation');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => RegisterDriverConfirmation()),
+                );
               },
               child: Text("CONFIRM"),
               style: ElevatedButton.styleFrom(

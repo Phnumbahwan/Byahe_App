@@ -1,3 +1,4 @@
+import 'package:byahe_app/pages/login/loginpage.dart';
 import 'package:flutter/material.dart';
 
 class CloseButtonBlack extends StatelessWidget {
@@ -11,7 +12,9 @@ class CloseButtonBlack extends StatelessWidget {
       height: 30,
       child: InkWell(
           onTap: () {
-            Navigator.pushNamed(context, '/loginpage');
+            // Navigator.pushNamed(context, '/loginpage');
+            Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => LoginPage()));
           },
           child: Image.asset('assets/closeblack.png')),
     );

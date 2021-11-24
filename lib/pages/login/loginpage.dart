@@ -1,3 +1,6 @@
+import 'package:byahe_app/pages/commuter/locationselection.dart';
+import 'package:byahe_app/pages/driver/onboard.dart';
+import 'package:byahe_app/pages/register/registerpage.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -57,7 +60,9 @@ class LoginPage extends StatelessWidget {
                     padding: EdgeInsets.fromLTRB(15, 0, 15, 15),
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/locationselection');
+                        // Navigator.pushNamed(context, '/locationselection');
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => Onboard()));
                       },
                       child: Text("LOGIN"),
                       style: ElevatedButton.styleFrom(
@@ -68,7 +73,9 @@ class LoginPage extends StatelessWidget {
                     )),
                 InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, '/register');
+                    // Navigator.pushNamed(context, '/register');
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => RegisterPage()));
                   },
                   child: Text("Don't have account yet? Register now!",
                       style: TextStyle(fontSize: 15, color: Colors.blue[200])),
