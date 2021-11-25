@@ -1,3 +1,4 @@
+import 'package:byahe_app/main.dart';
 import 'package:flutter/material.dart';
 
 class TopBarMod extends StatelessWidget {
@@ -24,12 +25,8 @@ class TopBarMod extends StatelessWidget {
                         text: TextSpan(
                             text: "   Status: ",
                             style: TextStyle(color: Colors.black, fontSize: 13),
-                            children: const <TextSpan>[
-                              TextSpan(
-                                  text: "Riding",
-                                  style: TextStyle(
-                                      color: Colors.redAccent,
-                                      fontWeight: FontWeight.bold)),
+                            children: <TextSpan>[
+                              alleyCheck(),
                             ]),
                       )
                     : null)
@@ -41,5 +38,18 @@ class TopBarMod extends StatelessWidget {
               },
               child: Image.asset('assets/icons8-reply-arrow-30.png')))
     ]);
+  }
+}
+
+TextSpan alleyCheck() {
+  if (MyApp.alley) {
+    return TextSpan(
+        text: "Alley",
+        style:
+            TextStyle(color: Colors.greenAccent, fontWeight: FontWeight.bold));
+  } else {
+    return TextSpan(
+        text: "Riding",
+        style: TextStyle(color: Colors.redAccent, fontWeight: FontWeight.bold));
   }
 }

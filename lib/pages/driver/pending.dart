@@ -1,34 +1,19 @@
-import 'package:byahe_app/pages/driver/pending.dart';
+import 'package:byahe_app/data/data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:byahe_app/widgets/topbarmod.dart';
 import 'package:byahe_app/widgets/driver/navigationalcontainer.dart';
-import 'package:byahe_app/data/data.dart';
+import 'package:flutter/painting.dart';
 
-class Onboard extends StatefulWidget {
-  // const Onboard({ Key? key }) : super(key: key);
+class Pending extends StatefulWidget {
+  // const Pending({ Key? key }) : super(key: key);
 
   @override
-  _OnboardState createState() => _OnboardState();
+  _PendingState createState() => _PendingState();
 }
 
-class _OnboardState extends State<Onboard> {
-  int jeepcapacity = 12;
-
-  Color checkVacant(int occupy) {
-    double low = jeepcapacity * 0.5;
-    double mid = jeepcapacity * 0.8;
-    int high = jeepcapacity * 1;
-    if (occupy <= low) {
-      return Colors.greenAccent;
-    } else if (occupy <= mid && occupy > low) {
-      return Colors.yellow[700];
-    } else if (occupy > mid && occupy <= high) {
-      return Colors.redAccent;
-    }
-  }
-
-  String pageName = 'Onboard';
+class _PendingState extends State<Pending> {
+  String pageName = 'Pending';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,17 +30,24 @@ class _OnboardState extends State<Onboard> {
       ),
       NavigationalContainer(this.pageName),
       Container(
-        alignment: Alignment.centerRight,
-        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 5),
-        child: Text(
-            commuterinfo.length.toString() + '/' + this.jeepcapacity.toString(),
-            style: TextStyle(
-                color: checkVacant(commuterinfo.length),
-                fontWeight: FontWeight.bold)),
-      ),
+          alignment: Alignment.centerRight,
+          padding: EdgeInsets.symmetric(horizontal: 12, vertical: 5),
+          child: RichText(
+            text: TextSpan(
+                text: "Total Pending :",
+                style:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                children: <TextSpan>[
+                  TextSpan(
+                      text: pending.length.toString(),
+                      style: TextStyle(
+                          color: Colors.redAccent,
+                          fontWeight: FontWeight.bold)),
+                ]),
+          )),
       Container(
           child: Column(
-        children: commuterinfo
+        children: pending
             .map((commuter) => Container(
                 decoration: BoxDecoration(
                     color: Colors.yellow[700],
@@ -85,13 +77,22 @@ class _OnboardState extends State<Onboard> {
                           ),
                         )
                       ]),
-                      Container(
-                        padding: EdgeInsets.symmetric(horizontal: 10),
-                        child: Image.asset(
-                          'assets/remove.png',
-                          width: 50,
+                      Row(children: <Widget>[
+                        Container(
+                          padding: EdgeInsets.symmetric(horizontal: 5),
+                          child: Image.asset(
+                            'assets/check.png',
+                            width: 50,
+                          ),
                         ),
-                      )
+                        Container(
+                          padding: EdgeInsets.symmetric(horizontal: 5),
+                          child: Image.asset(
+                            'assets/reject.png',
+                            width: 50,
+                          ),
+                        )
+                      ])
                     ])))
             .toList(),
       ))
