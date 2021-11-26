@@ -10,6 +10,15 @@ class LocationSelection extends StatefulWidget {
 }
 
 class _LocationSelectionState extends State<LocationSelection> {
+  final myController = TextEditingController();
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    myController.dispose();
+    super.dispose();
+  }
+
   // ignore: missing_return
   Widget locationStatusLayout(String status) {
     switch (status) {
@@ -61,13 +70,15 @@ class _LocationSelectionState extends State<LocationSelection> {
             margin: EdgeInsets.symmetric(horizontal: 10),
             child: Form(
               child: TextFormField(
+                controller: myController,
                 decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.yellow[700])),
-                    suffixIcon: Icon(
+                    suffixIcon: InkWell(
+                        child: Icon(
                       Icons.search,
                       color: Colors.yellow[700],
-                    ),
+                    )),
                     hintText: ('Search here ...'),
                     border: OutlineInputBorder()),
               ),

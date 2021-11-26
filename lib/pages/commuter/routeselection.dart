@@ -14,6 +14,15 @@ class RouteSelection extends StatefulWidget {
 }
 
 class _RouteSelectionState extends State<RouteSelection> {
+  _RouteSelectionState() {
+    locationRoute
+      ..sort((route1, route2) {
+        int status1 = route1['status'];
+        int status2 = route2['status'];
+        return status1.compareTo(status2);
+      });
+  }
+
   void resetQueued() {
     setState(() {
       locationRoute.map((route) {
