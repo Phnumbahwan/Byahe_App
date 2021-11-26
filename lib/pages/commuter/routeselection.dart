@@ -14,15 +14,6 @@ class RouteSelection extends StatefulWidget {
 }
 
 class _RouteSelectionState extends State<RouteSelection> {
-  _RouteSelectionState() {
-    print(locationRoute
-      ..sort((route1, route2) {
-        int status1 = route1['status'];
-        int status2 = route2['status'];
-        return status1.compareTo(status2);
-      }));
-  }
-
   void resetQueued() {
     setState(() {
       locationRoute.map((route) {
@@ -77,13 +68,6 @@ class _RouteSelectionState extends State<RouteSelection> {
                                           child: PercentIndicator(
                                               route['status'])),
                                     ]),
-                                    Container(
-                                      child: Text(
-                                          route['queue'] ? "QUEUED" : " ",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.green)),
-                                    ),
                                     Container(
                                       child: Icon(Icons.place,
                                           color: Colors.white),

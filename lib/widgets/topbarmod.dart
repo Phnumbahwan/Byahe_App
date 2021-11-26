@@ -20,7 +20,8 @@ class TopBarMod extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.bold),
             )),
             Container(
-                child: true
+                child: false
+                    // ignore: dead_code
                     ? RichText(
                         text: TextSpan(
                             text: "   Status: ",
@@ -34,7 +35,29 @@ class TopBarMod extends StatelessWidget {
       Expanded(
           child: InkWell(
               onTap: () {
-                Navigator.pop(context);
+                print(MyApp.ping);
+                if (MyApp.ping == true) {
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          title: Text('WARNING'),
+                          content: Text(
+                              'You are not able to exit on this page while pinging!'),
+                          actions: <Widget>[
+                            TextButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              child: Text('CLOSE'),
+                            )
+                          ],
+                        );
+                      });
+                } else {
+                  Navigator.pop(context);
+                }
+                // Navigator.pop(context);
               },
               child: Image.asset('assets/icons8-reply-arrow-30.png')))
     ]);

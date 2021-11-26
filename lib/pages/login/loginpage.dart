@@ -61,8 +61,8 @@ class LoginPage extends StatelessWidget {
                     child: ElevatedButton(
                       onPressed: () {
                         // Navigator.pushNamed(context, '/locationselection');
-                        Navigator.of(context).push(
-                            MaterialPageRoute(builder: (context) => Onboard()));
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => LocationSelection()));
                       },
                       child: Text("LOGIN"),
                       style: ElevatedButton.styleFrom(

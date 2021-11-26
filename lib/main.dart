@@ -11,6 +11,7 @@ void main() {
 class MyApp extends StatelessWidget {
   // const MyApp({ Key? key }) : super(key: key);
   static bool alley = false;
+  static bool ping = false;
 
   @override
   Widget build(BuildContext context) {
