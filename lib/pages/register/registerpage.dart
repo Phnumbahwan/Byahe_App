@@ -31,7 +31,6 @@ class RegisterPage extends StatelessWidget {
             padding: EdgeInsets.all(10),
             child: ElevatedButton(
                 onPressed: () {
-                  // Navigator.pushNamed(context, '/registercommuter');
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => RegisterCommuter()));
                 },

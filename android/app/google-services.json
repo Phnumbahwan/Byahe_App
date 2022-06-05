@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "260882366166",
+    "project_id": "byahe-ddb1d",
+    "storage_bucket": "byahe-ddb1d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:260882366166:android:8751dc8d89b27f8de7d377",
+        "android_client_info": {
+          "package_name": "com.example.Byahe_App"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "260882366166-q3en2p9g835esvoccqrih8l3jsst8416.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.Byahe_App",
+            "certificate_hash": "e6514eac9c1f618369c4736617bb69802870932c"
+          }
+        },
+        {
+          "client_id": "260882366166-0kqnrgs1h2pdr82jkfaeamqlk4989ef6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbjjoFgYjeHmCeqgUsVkPnJtuvddb7Mm8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "260882366166-0kqnrgs1h2pdr82jkfaeamqlk4989ef6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

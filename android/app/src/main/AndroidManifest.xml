@@ -8,15 +8,17 @@
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
+        android:usesCleartextTraffic="true"
         android:name="io.flutter.app.FlutterApplication"
-        android:label="Byahe_App"
-        android:icon="@mipmap/ic_launcher">
-        <meta-data
-              android:name="com.google.android.geo.API_KEY"
-              android:value="AIzaSyCRPi1FWqDHNe5gSxKX6oQS8Xx6NIwdTVQ"
-              />
+        android:label="Byahe"
+        android:icon="@mipmap/launcher_icon">
+        <meta-data android:name="com.google.android.geo.API_KEY"
+          android:value="AIzaSyC1MT12YRBBuDYKd1SMvFLOyiRM-PPE-wU"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
